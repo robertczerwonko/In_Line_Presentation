@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Rolki</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="background-image: url(background_3.png); overflow-y: auto;">
+    <audio src="nutka1.mp3" autoplay loop></audio>
+    <div class="circles">
+        <a class="podstawy button" href="podstawy.html">
+            <img src="red.png">
+            <span class="label">Podstawy</span>
+        </a>
+        <a class="rodzaj button" href="rodzaje.html">
+            <img src="green.png">
+            <span class="label" >Rodzaj jazd</span>
+        </a>
+        <a class="znane button" href="znane.html">
+            <img  src="grey.png" >
+            <span class="label">Rolki polska rzecz</span>
+        </a>
+        <a class="ciekawostki button" href="ciekawostki.html">
+            <img  src="purple.png">
+            <span class="label">Ciekawostki</span>
+        </a>
+    </div>
+
+    <div class="reveal">
+
+        <div class="slides" style="margin-top: 0;">
+            <section>
+                <div style="font-size: 75%" >
+                    <img width="500" height="250" src="ochraniacze.png">
+                     <p>Podstawy podstaw!</p>
+                     <p>Dla profesjonalistów, jak i dla amatorów! Zestaw niezbędny do jazdy to kask i ochraniacze!</p>
+                     <p>Podczas nauki jazdy, ochraniacze pomagają pokonać strach który nie pozwala Ci sie rozwijać,
+                     zaś dla bardziej zaawansowanych jest to ochrona przy niebezpiecznych manewrach!</p>
+                </div>
+            </section>
+            <section>
+                <img width="650" height="650" src="rolka.png">    
+            </section>
+            <section style="font-size: 75%">
+                <p><b>KÓŁKA: </b> oznaczenia na kółkach jakie możemy znaleźć to rozmiar i twardość np<b>(82mm 78A), im większy numer przy literce A, tym większa twardość!</b></p>
+                <img src="kolka_smile.png" >
+            </section>
+            <section style="font-size: 75%">
+                <p>Jedną z podstawowych technik <b>hamowania</b> jest T-STOP, jest najprostrza poza korzystaniem z wbudowanego hamulca  </p>
+                <img src="T_stop.jpg">
+                <p><b>Bardziej zaawansowane techniki to np. Power Stop i Power Slide, które pozwalają nam się zatrzymać przy sporych prędkościach!</b> </p>
+            </section>
+            <section style="font-size: 75%">
+                    <p><b>Kolejną rzeczą którą zaleca się uczyć początkującym to PRZEPLATANKA,
+                     jest to zmienianie środka ciężkości podczas jazdy, ułatwia to skręcanie,
+                     jak i otwiera drogę do wielu innych przejść czy trików!</b></p>
+                     <img src="przeplatanka.jpg">
+                    
+          </section>
+        </div>
+    </div>
+
+    <div class="sound">
+        <img class src="sound.png">
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+    <script>
+        document.querySelectorAll('section').forEach(e => e.style.paddingTop = 0)
+        let isPlaying = false
+        const sound = document.querySelector('.sound')
+        const audio = document.querySelector('audio')
+        const img = document.querySelector('.sound > img')
+
+        sound.addEventListener('click', function (e) {
+            if (isPlaying) {
+                img.src = 'speaker.png'
+                audio.pause()
+            } else {
+                img.src = 'sound.png'
+                audio.play()
+            }
+            isPlaying = !isPlaying
+        })
+
+    </script>
+</body>
+
+</html>

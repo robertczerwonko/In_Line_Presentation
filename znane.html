@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Rolki</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="background-image: url(background_1.png); overflow-y: auto;">
+    <audio src="nutka1.mp3" autoplay loop></audio>
+    <div class="circles">
+        <a class="podstawy button" href="podstawy.html">
+            <img src="red.png">
+            <span class="label">Podstawy</span>
+        </a>
+        <a class="rodzaj button" href="rodzaje.html">
+            <img src="green.png">
+            <span class="label" >Rodzaj jazd</span>
+        </a>
+        <a class="znane button" href="znane.html">
+            <img  src="grey.png" >
+            <span class="label">Rolki polska rzecz</span>
+        </a>
+        <a class="ciekawostki button" href="ciekawostki.html">
+            <img  src="purple.png">
+            <span class="label">Ciekawostki</span>
+        </a>
+    </div>
+
+    <div class="reveal">
+
+        <div class="slides" style="margin-top: 0;">
+            <section>
+                <div class="slide1">
+                    <img height="400" width="550" src="Klaudia.jpg">
+                    <div class="opis1" style="font-size: 60%">
+                        <p><b>Klaudia Hartmanis</b> </p>
+                        <p>Polka, urodzona w 1995r. 16 Sierpnia</p>
+                        <p>(2011)Wicemistrzyni Swiata w jeździe freestyle: Slalom</p>
+                        <p>(2013)Wicemistrzyni Swiata w jeździe freestyle: Slalom w parze </p>
+                     </div>
+                </div>
+            </section>
+            <section>
+                 <div class="slide2">
+                     <p>Wystep pary:Klaudia Hartmanis i Michał Sulinowski </p>
+                    <video src="polska_para.mp4" controls></video>
+                 </div>
+            </section>
+            <section>
+                <p style="font-size: 120%"><b>NIGHTSKATING!</b></p>
+                <div class="slide3" style="display: flex; flex-direction: column;  align-items: center;">
+                    <div class="row-2">
+                        <img height="300" width="500" src="nightskating1.jpg">
+                        <img height="300" width="500" src="nightskating2.jpg">
+                    </div>
+                    <div class="row-2">
+                        <p style="font-size: 75%">Nightskating to wieczorne przejazdy rolkarzy ulicami miasta. Spokojne tempo przejazdu pozwala nadążyć osobom w każdym wieku, jednak wymagane są podstawowe umiejętności jazdy i hamowania.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <p><b>Ogranizcja NS w Polsce!</b></p>
+                <p>Jedną z bardziej znanych ogranizjacji to Fundacja Violet Kiwi która angażuje się w różnorodne przedsięwzięcia pożyteczne społecznie, a ich głównym celem jest popularyzacja wrotkarstwa poprzez organizacje przejazdów Nightskating</p>
+                <p style="font-size: 50%">Bydgoszcz - Piasczeno - Płock - Toruń - Wrocław - Łódź orazn inne miasta!</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="sound">
+        <img class src="sound.png">
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+    <script>
+        document.querySelectorAll('section').forEach(e => e.style.paddingTop = 0)
+        let isPlaying = false
+        const sound = document.querySelector('.sound')
+        const audio = document.querySelector('audio')
+        const img = document.querySelector('.sound > img')
+
+        sound.addEventListener('click', function (e) {
+            if (isPlaying) {
+                img.src = 'speaker.png'
+                audio.pause()
+            } else {
+                img.src = 'sound.png'
+                audio.play()
+            }
+            isPlaying = !isPlaying
+        })
+
+        var v = document.getElementsByTagName("video")[0];
+        v.addEventListener("pause", function() { audio.play(); }, true);
+        v.addEventListener("play", function() { audio.pause(); }, true);
+
+    </script>
+</body>
+
+</html>

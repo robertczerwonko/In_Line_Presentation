@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Rolki</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="background-image: url(background_2.png); overflow-y: auto;">
+    <audio src="nutka1.mp3" autoplay loop></audio>
+    <div class="circles">
+        <a class="podstawy button" href="podstawy.html">
+            <img src="red.png">
+            <span class="label">Podstawy</span>
+        </a>
+        <a class="rodzaj button" href="rodzaje.html">
+            <img src="green.png">
+            <span class="label" >Rodzaj jazd</span>
+        </a>
+        <a class="znane button" href="znane.html">
+            <img  src="grey.png" >
+            <span class="label">Rolki polska rzecz</span>
+        </a>
+        <a class="ciekawostki button" href="ciekawostki.html">
+            <img  src="purple.png">
+            <span class="label">Ciekawostki</span>
+        </a>
+    </div>
+
+    <div class="reveal">
+
+        <div class="slides" style="margin-top: 0;">
+            <section>
+                    <p style="font-size: 105%"><b>INLINE SKATING - WYSCIGI!</b> </p>
+                <div class="slide1">
+                    <img height="400" src="kostium.png">
+                    <p style="font-size: 90%">Rolki to nie tylko sposób na spędzanie wolnego czasu w parku! To także,
+                         sposoby na życie i jednym z takich sposbów jest ściganie się!
+                          Wyścigi na rolkach charakteryzują: Szybkość, oraz kombinezony opływowe!</p>
+                </div>
+            </section>
+            <section>
+                    <p>Przykład wyścigu na rolkach :)</p>
+                    <video class="film" src="race.mp4" controls></video>
+            </section>
+            <section>
+                    <p style="font-size: 105%"><b>INLINE SKATING - Miejska JAZDA!</b> </p>
+                <div class="slide1">
+                    <img height="400" src="urban_stand.jpg">
+                    <p style="font-size: 90%">Niektórzy rolkarze preferują spontaniczne wypady w miasto na rolkach,
+                        ten sposób jazdy jest dla najbardziej doświadczonych, najbardziej kreatywnych, oraz ludzi wielbiących ryzyko!
+                        Swietne tricki, ujęcia dla paparazzi oraz satysfakcja z jazdy po nieznanych terenach są dla tych ludzi wystarczającą nagrodą! </p>
+                </div>
+            </section>
+            <section>
+                    <p>Przykład jazdy miejskiej :)</p>
+                    <video src="urban.mp4" controls></video>
+            </section>
+            <section>
+                    <p style="font-size: 105%"><b>INLINE SKATING - DOWNHILL !</b> </p>
+                <div class="slide1">
+                    <img height="400" src="downhill_stand.jpg">
+                    <p style="font-size: 90%">Ludzi o słabych nerwach proszę o wyjście, gdyż ta zabawa nie jest dla każdego!
+                        Najbardziej niebezpieczna forma jazdy na rolkach, czyli zjazdy z gór! Prędkości osiągane dorównują niejdnemu samochodowi!
+                     60/70 km/h? Wiecej nawet ponas 120 km/h! </p>
+                </div>
+            </section>
+            <section>
+                    <p>Przykład zjazdu z góry! :)</p>
+                    <video src="downhill.mp4" controls></video>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="sound">
+        <img class src="sound.png">
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+    <script>
+        document.querySelectorAll('section').forEach(e => e.style.paddingTop = 0)
+        let isPlaying = false
+        const sound = document.querySelector('.sound')
+        const audio = document.querySelector('audio')
+        const img = document.querySelector('.sound > img')
+
+
+        sound.addEventListener('click', function (e) {
+            if (isPlaying) {
+                img.src = 'speaker.png'
+                audio.pause()
+            } else {
+                img.src = 'sound.png'
+                audio.play()
+            }
+            isPlaying = !isPlaying
+        })
+        var v = document.getElementsByTagName("video")[0];
+        var v1 = document.getElementsByTagName("video")[1];
+        var v2 = document.getElementsByTagName("video")[2];
+        v.addEventListener("pause", function() { audio.play(); }, true);
+        v.addEventListener("play", function() { audio.pause(); }, true);
+        v1.addEventListener("pause", function() { audio.play(); }, true);
+        v1.addEventListener("play", function() { audio.pause(); }, true);
+        v2.addEventListener("pause", function() { audio.play(); }, true);
+        v2.addEventListener("play", function() { audio.pause(); }, true);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circles {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .circles,
+  .reveal {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+}
+
+.button:active {
+  transform: translateY(25px);
+}
+
+.button:hover {
+  animation: spin 0.5s;
+}
+
+.button span {
+  position: absolute;
+}
+
+.sound {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.slide1 {
+  display: flex;
+}
+
+.row-2 {
+  display: flex;
+}
+
+.row-2 img {
+  margin: 20px !important;
+}
+
+p {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.label
+{
+ 
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  
+}
+.opis1 {
+  width: 700px !important;
+}

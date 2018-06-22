@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Rolki</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="background-image: url(background_4.png); overflow-y: auto;">
+    <audio src="nutka1.mp3" autoplay loop></audio>
+    <div class="circles">
+        <a class="podstawy button" href="podstawy.html">
+            <img src="red.png">
+            <span class="label">Podstawy</span>
+        </a>
+        <a class="rodzaj button" href="rodzaje.html">
+            <img src="green.png">
+            <span class="label" >Rodzaj jazd</span>
+        </a>
+        <a class="znane button" href="znane.html">
+            <img  src="grey.png" >
+            <span class="label">Rolki polska rzecz</span>
+        </a>
+        <a class="ciekawostki button" href="ciekawostki.html">
+            <img  src="purple.png">
+            <span class="label">Ciekawostki</span>
+        </a>
+    </div>
+
+    <div class="reveal">
+
+        <div class="slides" style="margin-top: 0;">
+            <section >
+                <div class="slide1">
+                    <img height="400" src="rolki_retro.jpg">
+                    <p style="font-size: 90%; margin: 5px "> Wszystko rozpoczęło się na imprezie!
+                        Twórca rolek John Joseph Merlin,
+                         zaprezentował Swój wynalazek w 1760 roku na imprezie
+                        z przebraniami! Niestety Merlin nie ćwiczył zbytnio
+                        jazdy przed co zakończyło się upadkiem i tak oto ego Johna zostało zszarpane,
+                        a jednocześnie rozpoczeło sie 
+                        szalenśtwo na rolkach!
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div class="slide2" style="display: flex; flex-direction: column;  align-items: center;">
+                    <div class="row-2">
+                        <img height="300" src="1.jpg">
+                        <p style="font-size: 60%">Rolkowe wesela!</p>
+                        <img height="300" src="2.jpg">
+                        <p style="font-size: 60%">Rolkowa obsługa!</p>
+                    </div>
+                    <div class="row-2">
+                        <img height="300" src="3.jpg">
+                        <p style="font-size: 60%">Rolkowe wyścigi!</p>
+                        <img height="300" src="4.jpg">
+                        <p style="font-size: 60%">Rolkowe zdrowie!</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                    <div class="slide3">
+                        <p>W 1912 roku po raz pierwszy zarejestrowano wesele które odbyło się całkowicie na rolkach!</p>
+                        <p>124,6 km/h! To najszybsza
+                            predkosc jaką człowiek osiągnął na rolkach,
+                            zjeźdzając z góry, rekord ten nalezy do Sandro Bovo
+                            i został pobity w Brazyli!</p>
+                    </div>
+            </section>
+            <section>
+                    <div class="slide4" style="font-size: 70%; margin: -10px">
+                        
+                        <p>Dlaczego warto?</p>
+                        <p>Rolki to doskonała forma wypoczynku, jak i ćwiczeń!</p>
+                        <p>1. Skutecznie spala tkankę tłuszczową!</p>
+                        <p>2. Nie obciąza stawów, tak bardzo jak bieganie!</p>
+                        <p>3. Poprawia koordynacje ruchową!</p>
+                        <p>4. Odpręza i redukuje stres!</p>
+                        <p>Sport ten nadaje się dla każdego, dla ludzi szukających mocnych wrażeń,
+                         jak i dla tych którzy chcą na spokojnie przejechać przez park z rodziną i znajomymi!</p>   
+                    </div>
+                </section >
+            <section>
+                    <div class="slide5">
+                        <p>Pokaz!</p>
+                         <video src="Rolki_video1.mp4" controls></video>
+                    </div>
+            </section>
+            <section>
+                    <div class="slide1">
+                    <img height="400" src="robert.jpg">
+                    <p style="font-size: 90%; margin: 5px ">Autor: Robert Czerwonko grp 202aCL 
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="sound">
+        <img class src="sound.png">
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+    <script>
+        document.querySelectorAll('section').forEach(e => e.style.paddingTop = 0)
+        let isPlaying = false
+        const sound = document.querySelector('.sound')
+        const audio = document.querySelector('audio')
+        const img = document.querySelector('.sound > img')
+
+        sound.addEventListener('click', function (e) {
+            if (isPlaying) {
+                img.src = 'speaker.png'
+                audio.pause()
+            } else {
+                img.src = 'sound.png'
+                audio.play()
+            }
+            isPlaying = !isPlaying
+        })
+
+        var v = document.getElementsByTagName("video")[0];
+        v.addEventListener("pause", function() { audio.play(); }, true);
+        v.addEventListener("play", function() { audio.pause(); }, true);
+
+    </script>
+</body>
+
+</html>
